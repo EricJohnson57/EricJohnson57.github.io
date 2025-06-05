@@ -1,5 +1,5 @@
 body {
-    background: rgb(197, 205, 125);
+    background: rgb(129, 233, 119);
     color: rgb(45, 45, 45);
     padding: 10px;
     font-family: Arial, sans-serif;
@@ -47,7 +47,7 @@ a {
 
 /* main container area beneath menu */
 main {
-    background: rgb(219, 230, 245);
+    background: rgb(225, 235, 253);
     display: flex;
     margin-top: 20px;
 }
