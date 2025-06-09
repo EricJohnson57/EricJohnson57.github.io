@@ -37,34 +37,34 @@ $(function () {
 
 
     // TODO 2 - Create Platforms
-    createPlatform(500, 601, 100, 20, "red"); 
-    createPlatform(300, 501, 100, 20,)
-    createPlatform(100, 401, 100, 20)
-    createPlatform(300, 301, 100, 20)
-    createPlatform(500, 301, 100, 20)
-    createPlatform(700, 401, 100, 20)
-    createPlatform(900, 401, 100, 20)
-    createPlatform(1100, 301, 100, 20)
-    createPlatform(1100, 500, 100, 20)
-    createPlatform(1300, 200, 100, 20)
-    createPlatform(1300, 600, 100, 20)
-    createPlatform(700, 200, 100, 20)
-    createPlatform(100, 200, 100, 20)
+    createPlatform(500, 601, 100, 20,); 
+    createPlatform(300, 501, 100, 20,);
+    createPlatform(100, 401, 100, 20);
+    createPlatform(300, 301, 100, 20);
+    createPlatform(500, 301, 100, 20);
+    createPlatform(700, 401, 100, 20);
+    createPlatform(900, 401, 100, 20);
+    createPlatform(1100, 301, 100, 20);
+    createPlatform(1100, 500, 100, 20);
+    createPlatform(1300, 200, 100, 20);
+    createPlatform(1300, 600, 100, 20);
+    createPlatform(700, 200, 100, 20);
+    createPlatform(100, 200, 100, 20);
 
     // TODO 3 - Create Collectables
     createCollectable("max", 1350, 50);
     createCollectable("max", 500, 20); 
     createCollectable("max", 1334, 550); 
-    // I might change this
+    createCollectable("max", 125, 150);
     
     // TODO 4 - Create Cannons
     createCannon("left", 50, 2000);
     createCannon("right", 400, 2000);
     createCannon("left", 500, 2000);
-    //createCannon
-    //createCannon
-    //createCannon
-    //createCannon
+    createCannon("top", 800, 2000);
+    createCannon("bottom", 1100, 2000);
+    createCannon("right", 300, 2000);
+    
 
     
     
