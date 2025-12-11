@@ -37,7 +37,7 @@ function runProgram(){
   Note: You can have multiple event listeners for different types of events.
   */
   $(document).on("keydown", handleKeyDown);
-  //$(document).on("keyup", handleKeyUp);                          
+  $(document).on("keyup", handleKeyUp);                          
 
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
@@ -49,9 +49,10 @@ function runProgram(){
   */
   function newFrame() {
     repositionGameItem();
+    wallCollision();
     redrawGameItem();
   }
-  
+   console.log(walker.speedX, walker.speedY);
   /* 
   This section is where you set up the event handlers for user input.
   For example, if you wanted to make an event handler for a click event, you should rename this function to 'handleClick', then write the code that should execute when the click event occurs.
@@ -79,7 +80,24 @@ function runProgram(){
   
   }
   
-    
+  function handleKeyUp(event) {
+    if (event.which === KEY.LEFT) {
+      console.log("left released")
+      walker.speedX = 0
+    }
+    if (event.which === KEY.UP) {
+      console.log("up released")
+      walker.speedY = 0
+    }
+    if (event.which === KEY.RIGHT) {
+      console.log("right released")
+      walker.speedX = 0
+    }
+    if (event.which === KEY.DOWN) {
+      console.log("down released")
+      walker.speedX = 0
+    }
+  }  
   }
   
   
@@ -90,15 +108,18 @@ function runProgram(){
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
+  function repositionGameItem() {
+    walker.x = walker.x + walker.speedX
+    walker.y = walker.y + walker.speedY
+  }
+ 
+ 
   function redrawGameItem() {
     $("#walker").css("left", walker.x);
     $("#walker").css("top", walker.y);
   } 
 
-  function repositionGameItem() {
-    walker.x = walker.x + walker.speedX
-    walker.y = walker.y + walker.speedY
-  }
+ 
 
   function endGame() {
     // stop the interval timer
@@ -106,6 +127,20 @@ function runProgram(){
 
     // turn off event handlers
     $(document).off();
+  }
+
+  function wallCollision() {
+    if (walker === 0) {
+      console.log("why")
+      walker.x -= walker.speedX;
+      walker.y -= walker.speedY;
+    }
+    if (walker === $("#board").width()) {
+      walker.x -= walker.speedX;
+    }
+    if (walker === $("#board").height()) {
+      walker.y -= walker.speedY;
+    }
   }
   
 
