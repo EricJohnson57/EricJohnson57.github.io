@@ -1,4 +1,5 @@
 // This is a small program. There are only two sections. This first section is what runs
+
 // as soon as the page loads.
 $(document).ready(function () {
   render($("#display"), image);
@@ -20,7 +21,7 @@ function resetAndRender() {
 // all of your apply functions
 function applyAndRender() {
   // Multiple TODOs: Call your apply function(s) here
-
+applyFilter();
   
 
   // do not change the below line of code
@@ -32,7 +33,20 @@ function applyAndRender() {
 /////////////////////////////////////////////////////////
 
 // TODO 1, 2, 3 & 5: Create the applyFilter function here
+function applyFilter() {
+  for (var i = 0; i < image.length; i++) {
+    var row = image[i];
 
+    for (var j = 0; j < row.length; j++) {
+      var pixel = image[i][j];
+      var pixelArray = rgbStringToArray(pixel);
+      // this is where you modify the color values
+      pixelArray[RED] = 200; 
+      var updatedPixel = rgbStringToArray(pixelArray);
+      image[i][j] = updatedPixel;
+    }
+  }
+}
 
 // TODO 9 Create the applyFilterNoBackground function
 

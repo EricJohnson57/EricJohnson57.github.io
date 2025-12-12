@@ -95,10 +95,10 @@ function runProgram(){
     }
     if (event.which === KEY.DOWN) {
       console.log("down released")
-      walker.speedX = 0
+      walker.speedY = 0
     }
   }  
-  }
+  
   
   
   
@@ -130,17 +130,19 @@ function runProgram(){
   }
 
   function wallCollision() {
-    if (walker === 0) {
+    if (walker.x === 0) {
       console.log("why")
       walker.x -= walker.speedX;
+    }
+    if (walker.y === 0) {
       walker.y -= walker.speedY;
     }
-    if (walker === $("#board").width()) {
+    if (walker.x === $("#board").width()) {
       walker.x -= walker.speedX;
     }
-    if (walker === $("#board").height()) {
+    if (walker.y === $("#board").height()) {
       walker.y -= walker.speedY;
     }
   }
   
-
+}
